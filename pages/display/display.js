@@ -20,10 +20,25 @@ var Main = React.createClass(
 
         componentDidMount()
         {
-            lowes.login("orod1993@gmail.com", "fakepass123", function(data)
+            lowes.login( "orod1993@gmail.com", "fakepass123", function ( data )
             {
-               console.log(data);
-            });
+                console.log( data );
+
+                lowes.createList("please work!", "bmx", function(list)
+                {
+                    console.log(list);
+
+                    lowes.getAllLists(function(lists)
+                    {
+                        console.log(lists.length);
+
+                        lowes.getListItems(lists[0].id, function(items)
+                        {
+                            console.log(items);
+                        })
+                    })
+                })
+            } );
 
             pinterest.getBoards( function ( boards )
             {
