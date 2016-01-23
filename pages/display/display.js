@@ -9,6 +9,7 @@ import React, {
 
 
 var pinterest = require( '../../lib/pinterest' );
+var lowes = require( '../../lib/lowes' );
 
 var Main = React.createClass(
     {
@@ -19,6 +20,11 @@ var Main = React.createClass(
 
         componentDidMount()
         {
+            lowes.login("orod1993@gmail.com", "fakepass123", function(data)
+            {
+               console.log(data);
+            });
+
             pinterest.getBoards( function ( boards )
             {
                 this.setState( { boards: boards } )
