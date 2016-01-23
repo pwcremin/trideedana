@@ -1,63 +1,123 @@
-
 import React, {
     AppRegistry,
     Component,
     StyleSheet,
     Text,
     View,
-    TouchableHighlight
+    TouchableHighlight,
+    PickerIOS,
+    PickerItemIOS
 } from 'react-native';
 
-var Selection = require('./selection/selection');
-var Display = require('./display/display');
-var Purchase = require('./purchase/purchase');
+var styles = require( './styles' );
+
+import {dispatch} from '../flux/product/dispatcher';
+var productConstants = require( '../flux/product/constants' );
+
+var time = {
+    name: 'time',
+    models: [ 'a few hours', '1 day', '1 weekend' ]
+};
+
+var Products = require('./products/products');
 
 var CategoryPreferencesSelection = React.createClass(
     {
-        onSelection()
+        getInitialState()
         {
-            this.props.navigator.push({
-                component: Selection
-            } );
+            return {
+                time: null,
+                difficulty: null
+            }
         },
 
-        onDisplay()
+        onTimeSelection( index )
         {
-            this.props.navigator.push({
-                component: Display
-            } );
+            this.setState( { time: index } )
+
+            this.navigate();
         },
 
-        onPurchase()
+        onDifficultySelection( index )
         {
-            this.props.navigator.push({
-                component: Purchase
-            } );
+            this.setState( { difficulty: index } )
+
+            this.navigate();
+        },
+
+        getTimeColor( index )
+        {
+            return this.state.time === index ? { backgroundColor: "orange" } : null;
+        },
+
+        getDiffColor( index )
+        {
+            return this.state.difficulty === index ? { backgroundColor: "orange" } : null;
+        },
+
+        navigate()
+        {
+            if(this.state.difficulty != null && this.state.time != null)
+            {
+                dispatch( {
+                    type: productConstants.SETCATEGORYPREFERENCES,
+                    time: this.state.time,
+                    difficulty: this.state.difficulty,
+                } );
+
+                this.setState({
+                    time: null,
+                        difficulty: null
+                });
+
+                this.props.navigator.push({
+                    component: Products
+                })
+            }
+        },
+
+        getTimeButton(text, index)
+        {
+            return <TouchableHighlight
+                onPress={this.onTimeSelection.bind(null, index)}
+            >
+                <View style={[styles.button, this.getTimeColor(index)]}>
+                    <Text>{text}</Text>
+                </View>
+            </TouchableHighlight>
+        },
+
+        getDiffButton(text, index)
+        {
+            return <TouchableHighlight
+                onPress={this.onDifficultySelection.bind(null, index)}
+            >
+                <View style={[styles.button, this.getDiffColor(index)]}>
+                    <Text>{text}</Text>
+                </View>
+            </TouchableHighlight>
         },
 
         render()
         {
-            return(
-                <View>
-                    <TouchableHighlight
-                        onPress={this.onSelection}
-                    >
-                        <Text>Selection</Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        onPress={this.onDisplay}
-                    >
-                        <Text>Display</Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        onPress={this.onPurchase}
-                    >
-                        <Text>Purchse</Text>
-                    </TouchableHighlight>
+            return (
+                <View style={styles.categoryPrefButtonContainer}>
+                    <View style={styles.categoryPrefChoicesContainer}>
+                        {this.getTimeButton("a few hours", 0)}
+                        {this.getTimeButton("1 day", 1)}
+                        {this.getTimeButton("1 weekend", 2)}
+                    </View>
+
+                    <View style={styles.categoryPrefChoicesContainer}>
+                        {this.getDiffButton("beginner", 0)}
+                        {this.getDiffButton("intermediate", 1)}
+                        {this.getDiffButton("advanced", 2)}
+                    </View>
                 </View>
+
 
             )
         }
-    })
+    } )
 
 module.exports = CategoryPreferencesSelection;

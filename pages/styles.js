@@ -41,6 +41,27 @@ var Styles = StyleSheet.create( {
         margin: 10,
         backgroundColor: '#dddddd'
     },
+    button: {
+        width: 100,
+        height: 50,
+        backgroundColor: 'lightblue',
+        borderWidth: 1,
+        borderRadius: 7,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    categoryPrefChoicesContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1
+    },
+    categoryPrefButtonContainer: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1
+    },
     //---------------------------------------------------------------
     mainPicContainer: {
         borderBottomWidth: 1,
@@ -96,11 +117,6 @@ var Styles = StyleSheet.create( {
         height: 22,
         alignSelf: 'flex-end',
         margin: 3,
-    },
-    button: {
-        borderRadius: 5,
-        backgroundColor: "lightblue",
-        padding: 10,
     },
     addPhotoText: {
         alignSelf: 'center',

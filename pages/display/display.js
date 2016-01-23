@@ -12,6 +12,8 @@ import React, {
 var pinterest = require( '../../lib/pinterest' );
 var styles = require( '../styles' );
 
+var CategoryPreferencesSelection = require('../categoryPreferencesSelection');
+
 import {dispatch} from '../../flux/product/dispatcher';
 var productConstants = require( '../../flux/product/constants' );
 
@@ -41,6 +43,10 @@ var Main = React.createClass(
                 type: productConstants.SETCATEGORY,
                 category: category,
             } );
+
+            this.props.navigator.push({
+                component: CategoryPreferencesSelection
+            })
         },
 
         getList()
