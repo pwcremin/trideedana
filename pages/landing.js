@@ -60,6 +60,4 @@ var Main = React.createClass(
     }
 })
 
-module.exports = Main;/**
- * Created by patrickcremin on 1/23/16.
- */
+module.exports = Main;

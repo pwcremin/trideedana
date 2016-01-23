@@ -1,4 +1,3 @@
-
 import React, {
     AppRegistry,
     Component,
@@ -9,8 +8,23 @@ import React, {
 } from 'react-native';
 
 
+var pinterest = require( '../../lib/pinterest' );
+
 var Main = React.createClass(
     {
+        getInitialState()
+        {
+            return ({ boards: {} })
+        },
+
+        componentDidMount()
+        {
+            pinterest.getBoards( function ( boards )
+            {
+                this.setState( { boards: boards } )
+            }.bind( this ) )
+        },
+
         onPress()
         {
             this.props.navigator.pop();
@@ -18,7 +32,7 @@ var Main = React.createClass(
 
         render()
         {
-            return(
+            return (
                 <View>
                     <Text>Display</Text>
                     <TouchableHighlight
@@ -30,6 +44,6 @@ var Main = React.createClass(
 
             )
         }
-    });
+    } );
 
 module.exports = Main;
