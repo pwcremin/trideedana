@@ -11,6 +11,7 @@ import React, {
 var Selection = require('./selection/selection');
 var Display = require('./display/display');
 var Purchase = require('./purchase/purchase');
+var Login = require('./login');
 
 var Main = React.createClass(
 {
@@ -35,10 +36,22 @@ var Main = React.createClass(
         } );
     },
 
+    onLogin()
+    {
+        this.props.navigator.push({
+            component: Login
+        });
+    },
+
     render()
     {
         return(
             <View>
+                <TouchableHighlight
+                    onPress={this.onLogin}
+                >
+                    <Text>Login</Text>
+                </TouchableHighlight>
                 <TouchableHighlight
                     onPress={this.onSelection}
                 >
