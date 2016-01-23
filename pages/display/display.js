@@ -4,46 +4,28 @@ import React, {
     StyleSheet,
     Text,
     View,
-    TouchableHighlight
+    TouchableHighlight,
+    Image
 } from 'react-native';
 
 
 var pinterest = require( '../../lib/pinterest' );
 var lowes = require( '../../lib/lowes' );
+var styles = require( '../styles' );
 
 var Main = React.createClass(
     {
         getInitialState()
         {
-            return ({ boards: {} })
+            return ({ boards: [] })
         },
 
         componentDidMount()
         {
-            lowes.login( "orod1993@gmail.com", "fakepass123", function ( data )
-            {
-                console.log( data );
-
-                lowes.createList("please work!", "bmx", function(list)
-                {
-                    console.log(list);
-
-                    lowes.getAllLists(function(lists)
-                    {
-                        console.log(lists.length);
-
-                        lowes.getListItems(lists[0].id, function(items)
-                        {
-                            console.log(items);
-                        })
-                    })
-                })
-            } );
-
-            pinterest.getBoards( function ( boards )
+            pinterest.getBoardsWithPins( function ( boards )
             {
                 this.setState( { boards: boards } )
-            }.bind( this ) )
+            }.bind( this ) );
         },
 
         onPress()
@@ -51,11 +33,45 @@ var Main = React.createClass(
             this.props.navigator.pop();
         },
 
+        getList()
+        {
+            var boards = this.state.boards;
+
+            var components = [];
+
+            for ( var i = 0; i < boards.length; i++ ) {
+                var board = boards[ i ];
+
+                var name = <Text>{board.name}</Text>
+
+                var image = <View></View>
+
+                if ( board.pins.length > 0 ) {
+                    var url = board.pins[ 0 ].image.original.url;
+
+                    image = <Image
+                        style={styles.displayPic}
+                        source={{uri: url}}
+                    />
+                }
+
+                components.push(
+                    <View key={i}>
+                        {name}
+                        {image}
+                    </View>
+                )
+            }
+
+            return components;
+        },
+
         render()
         {
             return (
                 <View>
                     <Text>Display</Text>
+                    {this.getList()}
                     <TouchableHighlight
                         onPress={this.onPress}
                     >
