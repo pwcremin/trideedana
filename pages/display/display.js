@@ -10,8 +10,10 @@ import React, {
 
 
 var pinterest = require( '../../lib/pinterest' );
-var lowes = require( '../../lib/lowes' );
 var styles = require( '../styles' );
+
+import {dispatch} from '../../flux/product/dispatcher';
+var productConstants = require( '../../flux/product/constants' );
 
 var Main = React.createClass(
     {
@@ -28,9 +30,17 @@ var Main = React.createClass(
             }.bind( this ) );
         },
 
-        onPress()
+        onBack()
         {
             this.props.navigator.pop();
+        },
+
+        onCategorySelection( category )
+        {
+            dispatch( {
+                type: productConstants.SETCATEGORY,
+                category: category,
+            } );
         },
 
         getList()
@@ -56,10 +66,15 @@ var Main = React.createClass(
                 }
 
                 components.push(
-                    <View key={i}>
-                        {name}
-                        {image}
-                    </View>
+                    <TouchableHighlight
+                        onPress={this.onCategorySelection.bind(null, board)}
+                    >
+                        <View key={i} style={styles.displayContainer}>
+                            {image}
+                            {name}
+                            <View style={styles.divider}/>
+                        </View>
+                    </TouchableHighlight>
                 )
             }
 
@@ -73,7 +88,7 @@ var Main = React.createClass(
                     <Text>Display</Text>
                     {this.getList()}
                     <TouchableHighlight
-                        onPress={this.onPress}
+                        onPress={this.onBack}
                     >
                         <Text>back</Text>
                     </TouchableHighlight>

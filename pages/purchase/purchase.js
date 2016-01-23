@@ -22,7 +22,7 @@ var Main = React.createClass(
             <View>
                 <Text>Purchase</Text>
                 <TouchableHighlight
-                    onPress={this.onPress}
+                    onPress={this.onBack}
                 >
                     <Text>back</Text>
                 </TouchableHighlight>

@@ -6,6 +6,8 @@
     "start": "react-native start"
   },
   "dependencies": {
+    "fbjs": "*",
+    "flux": "^2.1.1",
     "lodash": "^4.0.0",
     "react-native": "^0.18.1"
   }

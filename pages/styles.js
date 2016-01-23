@@ -9,7 +9,7 @@ const windowSize = Dimensions.get( 'window' );
 var windowWidth = windowSize.width;
 var windowHeight = windowSize.height;
 
-var picHeight = Math.floor( windowHeight / 5 ) - 20 // for margin;
+var picHeight = Math.floor( windowHeight / 10 )
 
 const DISPLAY_PIC_WIDTH = picHeight * 2 + 10//240 + 10; // the 10 is for the margin of the small pics below (so edges match up)
 const PIC_WIDTH = picHeight//120;
@@ -17,7 +17,12 @@ const DELETE_IMG_LEFT = 62;
 const DELETE_IMG_TOP = 58;
 
 var Styles = StyleSheet.create( {
+    displayPicContainer: {
+        borderWidth: 1,
+    },
     displayPic: {
+        borderWidth: 5,
+        borderRadius: 7,
         width: DISPLAY_PIC_WIDTH,
         height: DISPLAY_PIC_WIDTH,
         margin: 5,
@@ -25,6 +30,18 @@ var Styles = StyleSheet.create( {
         alignItems: 'center',
         backgroundColor: '#eaeaea',
     },
+    displayContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    divider: {
+        left: 10,
+        width: window.width - 40,
+        height: 1,
+        margin: 10,
+        backgroundColor: '#dddddd'
+    },
+    //---------------------------------------------------------------
     mainPicContainer: {
         borderBottomWidth: 1,
         borderBottomColor: 'black',
