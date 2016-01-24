@@ -78,6 +78,7 @@ var ProductDisplay = React.createClass(
         render()
         {
             return (
+            <Image source={require('../../lib/imgs/upwards.png')} style={styles.blueGrad}>   
                 <View style={styles.container} onLayout={this.onLayout}>
                     <Back {...this.props}/>
                     <ScrollView>
@@ -87,18 +88,19 @@ var ProductDisplay = React.createClass(
 
                         </View>
 
-                        <Text>{this.state.pin.data[ "Project" ]}</Text>
+                        <Text style={styles.productDisplayTitle}>{this.state.pin.data[ "Project" ]}</Text>
 
-
-                        <Text>Difficulty: {this.state.pin.data[ "Skill Level" ]}</Text>
-                        <Text>Time: {this.state.pin.data[ "Estimated Time" ]}</Text>
-                        <Text>Materials: {this.state.pin.data[ "Materials" ]}</Text>
+                        <Text style={styles.productDisplayLabel}>Description: <Text style={styles.productDisplayText}>{this.state.pin.data[ "Description" ]}</Text></Text>
+                        <Text style={styles.productDisplayLabel}>Difficulty: <Text style={styles.productDisplayText}>{this.state.pin.data[ "Skill Level" ]}</Text></Text>
+                        <Text style={styles.productDisplayLabel}>Time: <Text style={styles.productDisplayText}>{this.state.pin.data[ "Estimated Time" ]}</Text></Text>
+                        <Text style={styles.productDisplayLabel}>Materials: <Text style={styles.productDisplayText}>{this.state.pin.data[ "Materials" ]}</Text></Text>
+                        <Text style={styles.productDisplayLabel}>Tools: <Text style={styles.productDisplayText}>{this.state.pin.data[ "Tools" ]}</Text></Text>                        
 
                         <TouchableHighlight
                             onPress={this.onCreateList} underlayColor='transparent'
                         >
-                            <View style={styles.button}>
-                                <Text>Create List</Text>
+                            <View style={styles.buttonList}>
+                                <Text style={styles.answerText}>CREATE LIST</Text>
                             </View>
 
                         </TouchableHighlight>
@@ -113,9 +115,9 @@ var ProductDisplay = React.createClass(
                         alignItems: 'center',
                         justifyContent: 'center'
                         }}
-                        size="large"
-                    />
+                        size="large"/>
                 </View>
+                </Image>
 
             )
         }
