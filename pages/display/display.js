@@ -5,7 +5,8 @@ import React, {
     Text,
     View,
     TouchableHighlight,
-    Image
+    Image,
+    ScrollView
 } from 'react-native';
 
 
@@ -72,15 +73,18 @@ var Main = React.createClass(
                 }
 
                 components.push(
-                    <TouchableHighlight
-                        onPress={this.onCategorySelection.bind(null, board)}
-                    >
-                        <View key={i} style={styles.displayContainer}>
-                            {image}
-                            {name}
-                            <View style={styles.divider}/>
-                        </View>
-                    </TouchableHighlight>
+                    <View key={i}>
+                        <TouchableHighlight
+                            onPress={this.onCategorySelection.bind(null, board)}
+                        >
+                            <View key={i} style={styles.displayContainer}>
+                                {image}
+                                {name}
+                                <View style={styles.divider}/>
+                            </View>
+                        </TouchableHighlight>
+                    </View>
+
                 )
             }
 
@@ -90,7 +94,7 @@ var Main = React.createClass(
         render()
         {
             return (
-                <View>
+                <ScrollView>
                     <Text>Display</Text>
                     {this.getList()}
                     <TouchableHighlight
@@ -98,7 +102,7 @@ var Main = React.createClass(
                     >
                         <Text>back</Text>
                     </TouchableHighlight>
-                </View>
+                </ScrollView>
 
             )
         }

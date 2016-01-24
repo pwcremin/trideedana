@@ -5,14 +5,15 @@ import React, {
     Text,
     View,
     TouchableHighlight,
-    Image
+    Image,
+    ScrollView
 } from 'react-native';
 
 
 var pinterest = require( '../../lib/pinterest' );
 var styles = require( '../styles' );
 
-var CategoryPreferencesSelection = require('../categoryPreferencesSelection');
+var ProductDisplay = require( './productDisplay' );
 
 import {dispatch} from '../../flux/product/dispatcher';
 var productConstants = require( '../../flux/product/constants' );
@@ -35,12 +36,12 @@ var Products = React.createClass(
 
         ccomponentDidMount()
         {
-            productStore.addListener(this.onChange);
+            productStore.addListener( this.onChange );
         },
 
         onChange()
         {
-            this.setState(getProductState())
+            this.setState( getProductState() )
         },
 
         onBack()
@@ -49,9 +50,16 @@ var Products = React.createClass(
         },
 
 
-        onProductSelection()
+        onProductSelection(pin)
         {
+            dispatch( {
+                type: productConstants.SETPRODUCT,
+                pin: pin,
+            } );
 
+            this.props.navigator.push({
+                component: ProductDisplay
+            })
         },
 
         getList()
@@ -63,6 +71,15 @@ var Products = React.createClass(
             for ( var i = 0; i < pins.length; i++ ) {
                 var pin = pins[ i ];
 
+                console.log("PIN skill: " + pin.data["Skill Level"]);
+                console.log("PIN time: " + pin.data["Estimated Time"]);
+
+                if(pin.data["Skill Level"] !== this.state.categoryPreferences.difficulty
+                || pin.data["Estimated Time"] !== this.state.categoryPreferences.time)
+                {
+                    continue;
+                }
+
                 var name = <Text>{this.state.category.name}</Text>
 
                 var url = pin.image.original.url;
@@ -73,15 +90,17 @@ var Products = React.createClass(
                 />
 
                 components.push(
-                    <TouchableHighlight
-                        onPress={this.onProductSelection.bind(null, pin)}
-                    >
-                        <View key={i} style={styles.displayContainer}>
-                            {image}
-                            {name}
-                            <View style={styles.divider}/>
-                        </View>
-                    </TouchableHighlight>
+                    <View key={i}>
+                        <TouchableHighlight
+                            onPress={this.onProductSelection.bind(null, pin)}
+                        >
+                            <View key={i} style={styles.displayContainer}>
+                                {image}
+                                {name}
+                                <View style={styles.divider}/>
+                            </View>
+                        </TouchableHighlight>
+                    </View>
                 )
             }
 
@@ -91,12 +110,19 @@ var Products = React.createClass(
         render()
         {
             return (
-                <View>
+                <ScrollView>
                     <Text>category {this.state.category.name}</Text>
                     <Text>diff {this.state.categoryPreferences.difficulty}</Text>
                     <Text>time {this.state.categoryPreferences.time}</Text>
                     {this.getList()}
-                </View>
+
+                    <TouchableHighlight
+                        onPress={this.onBack}
+                    >
+                        <Text>back</Text>
+                    </TouchableHighlight>
+
+                </ScrollView>
 
             )
         }

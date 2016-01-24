@@ -11,6 +11,10 @@ export type Action =
         difficulty: int,
     } |
     {
+        type: constants.SETPRODUCT,
+        pin: pin,
+    } |
+    {
         type: 'link/noop',
         text: string,
     };

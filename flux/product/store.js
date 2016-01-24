@@ -6,6 +6,7 @@ var constants = require( './constants' );
 var utils = require( 'flux/utils' );
 
 var _category = null;
+var _product = null;
 
 var _prefs = {
     time: null,
@@ -20,6 +21,11 @@ function setCategory( category )
     _category = category;
 }
 
+function setProduct( product )
+{
+    _product = product;
+}
+
 function setCategoryPrefs( timeIndex, difficultyIndex )
 {
     _prefs.time = _timeValues[ timeIndex ];
@@ -31,6 +37,11 @@ class ProductStore extends utils.Store {
     getCategory()
     {
         return _category;
+    }
+
+    getProduct()
+    {
+        return _product;
     }
 
     getCategoryPreferences()
@@ -48,6 +59,11 @@ class ProductStore extends utils.Store {
 
             case constants.SETCATEGORYPREFERENCES:
                 setCategoryPrefs( action.time, action.difficulty );
+                this.__emitChange();
+                break;
+
+            case constants.SETPRODUCT:
+                setProduct( action.pin );
                 this.__emitChange();
                 break;
 
