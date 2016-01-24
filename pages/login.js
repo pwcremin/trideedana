@@ -66,7 +66,7 @@ var Login = React.createClass(
             <Image source={require('../lib/imgs/upwards.png')} style={styles.blueGrad}>    
                 <View style={styles.loginContainer}>
 
-                    <Image style={styles.logo} source={require('../images/logo.png')} />
+                    <Image style={styles.logo} source={require('../images/logo2.png')} />
 
                     <View style={styles.loginButtonContainer}>
                         <TextInput
@@ -87,12 +87,13 @@ var Login = React.createClass(
                             onPress={this.onPress}
                         >
                             <View style={styles.button}>
-                                <Text>Login</Text>
+                                <Text style={styles.answerText}>LOGIN</Text>
                             </View>
                         </TouchableHighlight>
 
-                    </View>
 
+                    </View>
+                <Image style={styles.logo} source={require('../images/poweredby.png')} />
 
                 </View>
             </Image>

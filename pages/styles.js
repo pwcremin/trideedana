@@ -145,8 +145,8 @@ var Styles = StyleSheet.create( {
     loginButtonContainer: {
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center',
-        flex: 1
+        flex: 1,
+        marginTop: 10
     },
     textInput: {
         height: 50,
@@ -171,6 +171,7 @@ var Styles = StyleSheet.create( {
     logo: {
         width: windowWidth,
         resizeMode: 'contain',
+        marginTop: 50
     },
     pinImageContainer: {
         alignItems: 'center',
