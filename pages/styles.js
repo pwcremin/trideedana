@@ -59,7 +59,16 @@ var Styles = StyleSheet.create( {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        flex: 1
+        flex: 1,
+        width: windowWidth
+    },
+    textContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1,
+        width: windowWidth,
+        height: 30
     },
     categoryPrefButtonContainer: {
         flexDirection: 'column',
@@ -158,10 +167,6 @@ var Styles = StyleSheet.create( {
         alignSelf: 'center',
         flex: 1,
         marginLeft: 20
-    },
-    title: {
-        fontSize: 20,
-        fontWeight: 'bold',
     }
 } );
 
