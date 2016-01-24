@@ -9,7 +9,8 @@ import React, {
     Text,
     View,
     TouchableHighlight,
-    TextInput
+    TextInput,
+    Image
 } from 'react-native';
 
 var styles = require( './styles' );
@@ -62,6 +63,7 @@ var Login = React.createClass(
         render()
         {
             return (
+            <Image source={require('../lib/imgs/upwards.png')} style={styles.blueGrad}>    
                 <View style={styles.loginContainer}>
                     <View style={styles.loginButtonContainer}>
                         <TextInput
@@ -90,6 +92,7 @@ var Login = React.createClass(
 
 
                 </View>
+            </Image>
 
             )
         }

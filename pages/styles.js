@@ -18,21 +18,25 @@ const DELETE_IMG_TOP = 58;
 
 var Styles = StyleSheet.create( {
     displayPicContainer: {
-        borderWidth: 1,
+        // borderWidth: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     displayPic: {
         borderWidth: 5,
         borderRadius: 7,
-        width: DISPLAY_PIC_WIDTH,
-        height: DISPLAY_PIC_WIDTH,
+        width: 375,
+        height: 120,
         margin: 5,
         padding: 1,
         alignItems: 'center',
-        backgroundColor: '#eaeaea',
+        backgroundColor: '#eaeaea'
+
     },
     displayContainer: {
         flexDirection: 'row',
         alignItems: 'center',
+        position: 'relative'
     },
     divider: {
         left: 10,
@@ -44,13 +48,13 @@ var Styles = StyleSheet.create( {
     button: {
         width: 100,
         height: 55,
-        backgroundColor: '#fdc058',
-        borderColor: '#fdc058',
+        backgroundColor: '#75a6c6',
+        borderColor: '#75a6c6',
         borderWidth: 6,
-        borderRadius: 30,
+        borderRadius: 15,
         justifyContent: 'center',
         alignItems: 'center',
-        shadowColor: '#e29003',
+        shadowColor: '#446378',
         shadowOpacity: 1,
         shadowOffset: {width: 0, height: 3},
         margin: 10
@@ -62,10 +66,21 @@ var Styles = StyleSheet.create( {
         flex: 1,
         width: windowWidth
     },
+    answerText: {
+        color: '#eeeff0',
+        fontFamily: 'Helvetica Neue',
+        fontWeight: 'bold'
+    },
+    blueGrad: {
+        flex: 1,
+        width: null,
+        height: null
+    },
     questionText: {
         fontSize: 30,
         fontWeight: 'bold',
-        textAlign: 'center'
+        textAlign: 'center',
+        color: '#5b5757'
     },
     choicesText: {
         position: 'relative',
@@ -74,6 +89,10 @@ var Styles = StyleSheet.create( {
         paddingLeft: 15,
         paddingRight: 15
 
+    },
+    categoryText: {
+        position: 'absolute',
+        width: windowWidth
     },
     textContainer: {
         flexDirection: 'row',

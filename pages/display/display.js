@@ -68,8 +68,7 @@ var Main = React.createClass(
 
                     image = <Image
                         style={styles.displayPic}
-                        source={{uri: url}}
-                    />
+                        source={{uri: url}}/>
                 }
 
                 components.push(
@@ -79,7 +78,9 @@ var Main = React.createClass(
                         >
                             <View key={i} style={styles.displayContainer}>
                                 {image}
-                                {name}
+                    <View style={styles.categoryText}>
+                        <Text style={styles.questionText}>{name}</Text>
+                    </View>                                
                                 <View style={styles.divider}/>
                             </View>
                         </TouchableHighlight>
@@ -94,6 +95,7 @@ var Main = React.createClass(
         render()
         {
             return (
+                <Image source={require('../../lib/imgs/upwards.png')} style={styles.blueGrad}>
                 <ScrollView>
                     <Text>Display</Text>
                     {this.getList()}
@@ -103,6 +105,7 @@ var Main = React.createClass(
                         <Text>back</Text>
                     </TouchableHighlight>
                 </ScrollView>
+            </Image>
 
             )
         }
