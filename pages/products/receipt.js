@@ -19,9 +19,7 @@ var lowes = require( '../../lib/lowes' );
 var Receipt = React.createClass( {
     onPress()
     {
-        this.props.navigator.push( {
-            component: Display
-        } );
+        this.props.navigator.popToTop();
     },
 
     getReceipt()
