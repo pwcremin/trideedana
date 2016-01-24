@@ -13,7 +13,7 @@ var Display = require('./display/display');
 var Purchase = require('./purchase/purchase');
 var Login = require('./login');
 
-var Main = React.createClass(
+var Landing = React.createClass(
 {
     onSelection()
     {
@@ -45,6 +45,7 @@ var Main = React.createClass(
 
     render()
     {
+
         return(
             <View>
                 <TouchableHighlight
@@ -62,15 +63,10 @@ var Main = React.createClass(
                 >
                     <Text>Display</Text>
                 </TouchableHighlight>
-                <TouchableHighlight
-                    onPress={this.onPurchase}
-                >
-                    <Text>Purchse</Text>
-                </TouchableHighlight>
             </View>
 
         )
     }
 })
 
-module.exports = Main;
+module.exports = Landing;

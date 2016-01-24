@@ -102,7 +102,7 @@ var CategoryPreferencesSelection = React.createClass(
         {
             return (
                 <View style={styles.categoryPrefButtonContainer}>
-                    <View style={styles.categoryPrefChoicesContainer}>
+                    <View style={[styles.categoryPrefChoicesContainer, {backgroundColor: 'green'}]}>
                         {this.getTimeButton("a few hours", 0)}
                         {this.getTimeButton("1 day", 1)}
                         {this.getTimeButton("1 weekend", 2)}
