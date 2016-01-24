@@ -79,6 +79,20 @@ var Styles = StyleSheet.create( {
         fontFamily: 'Helvetica Neue',
         fontWeight: 'bold'
     },
+    buttonList: {
+        width: 135,
+        height: 55,
+        backgroundColor: '#75a6c6',
+        borderColor: '#75a6c6',
+        borderWidth: 6,
+        borderRadius: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
+        shadowColor: '#446378',
+        shadowOpacity: 1,
+        shadowOffset: { width: 0, height: 3 },
+        margin: 10
+    },
     blueGrad: {
         flex: 1,
         width: null,

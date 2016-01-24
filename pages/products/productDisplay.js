@@ -96,8 +96,8 @@ var ProductDisplay = React.createClass(
                         <TouchableHighlight
                             onPress={this.onCreateList} underlayColor='transparent'
                         >
-                            <View style={styles.button}>
-                                <Text>Create List</Text>
+                            <View style={styles.buttonList}>
+                                <Text style={styles.answerText}>CREATE LIST</Text>
                             </View>
 
                         </TouchableHighlight>
