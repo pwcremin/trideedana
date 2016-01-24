@@ -63,6 +63,7 @@ var Login = React.createClass(
         render()
         {
             return (
+            <Image source={require('../lib/imgs/upwards.png')} style={styles.blueGrad}>    
                 <View style={styles.loginContainer}>
 
                     <Image style={styles.logo} source={require('../images/logo.png')} />
@@ -94,6 +95,7 @@ var Login = React.createClass(
 
 
                 </View>
+            </Image>
 
             )
         }
