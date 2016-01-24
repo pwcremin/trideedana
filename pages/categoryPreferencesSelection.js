@@ -79,7 +79,7 @@ var CategoryPreferencesSelection = React.createClass(
         getTimeButton(text, index)
         {
             return <TouchableHighlight
-                onPress={this.onTimeSelection.bind(null, index)} underlayColor= 'white'
+                onPress={this.onTimeSelection.bind(null, index)} underlayColor= '#c2baba'
             >
                 <View style={[styles.button, this.getTimeColor(index)]}>
                     <Text>{text}</Text>
@@ -90,7 +90,7 @@ var CategoryPreferencesSelection = React.createClass(
         getDiffButton(text, index)
         {
             return <TouchableHighlight
-                onPress={this.onDifficultySelection.bind(null, index)} underlayColor= 'white'
+                onPress={this.onDifficultySelection.bind(null, index)} underlayColor= '#9f9898'
             >
                 <View style={[styles.button, this.getDiffColor(index)]}>
                     <Text>{text}</Text>
