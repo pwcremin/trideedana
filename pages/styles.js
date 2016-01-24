@@ -180,6 +180,13 @@ var Styles = StyleSheet.create( {
         fontWeight: 'bold',
 
     },
+    productDisplayTitle: {
+        fontSize: 25,
+        color: '#5b5757',
+        fontWeight: 'bold',
+        paddingBottom: 10,
+        paddingTop: 10
+    },
     backContainer: {
         //alignItems: 'flex-start',
         //justifyContent: 'flex-start',

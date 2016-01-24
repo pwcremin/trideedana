@@ -85,7 +85,7 @@ var ProductDisplay = React.createClass(
 
                         </View>
 
-                        <Text>{this.state.pin.data[ "Project" ]}</Text>
+                        <Text style={styles.productDisplayTitle}>{this.state.pin.data[ "Project" ]}</Text>
 
 
                         <Text>Difficulty: {this.state.pin.data[ "Skill Level" ]}</Text>
