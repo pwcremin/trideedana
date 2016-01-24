@@ -25,17 +25,14 @@ var Styles = StyleSheet.create( {
         alignItems: 'center'
     },
     displayPicContainer: {
-        // borderWidth: 1,
         justifyContent: 'center',
         alignItems: 'center'
     },
     displayPic: {
-        borderWidth: 5,
         borderRadius: 7,
         width: 375,
-        height: 120,
-        margin: 5,
-        padding: 1,
+        height: 100,
+        margin: 10,
         alignItems: 'center',
         backgroundColor: '#eaeaea'
 
@@ -43,7 +40,11 @@ var Styles = StyleSheet.create( {
     displayContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        position: 'relative'
+        marginLeft: 20,
+        shadowColor: '#446378',
+        shadowOpacity: 10,
+        shadowOffset: { width: 0, height: 3 },
+        shadowRadius: 5
     },
     divider: {
         left: 10,
