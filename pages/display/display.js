@@ -74,10 +74,10 @@ var Main = React.createClass(
                 components.push(
                     <View key={i} style={styles.center}>
                         <TouchableHighlight
-                            onPress={this.onCategorySelection.bind(null, board)}
+                            onPress={this.onCategorySelection.bind(null, board)} underlayColor='transparent'
                         >
                             <View key={i} style={styles.displayContainer}>
-                                {image}                             
+                                {image}               
                                 <View style={styles.divider}/>
                             </View>
                         </TouchableHighlight>
