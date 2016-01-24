@@ -95,13 +95,7 @@ var Main = React.createClass(
         {
             return (
                 <ScrollView>
-                    <Text>Display</Text>
                     {this.getList()}
-                    <TouchableHighlight
-                        onPress={this.onBack}
-                    >
-                        <Text>back</Text>
-                    </TouchableHighlight>
                 </ScrollView>
 
             )

@@ -52,7 +52,7 @@ var Styles = StyleSheet.create( {
         alignItems: 'center',
         shadowColor: '#e29003',
         shadowOpacity: 1,
-        shadowOffset: {width: 0, height: 3},
+        shadowOffset: { width: 0, height: 3 },
         margin: 10
     },
     categoryPrefChoicesContainer: {
@@ -89,7 +89,7 @@ var Styles = StyleSheet.create( {
         justifyContent: 'center',
         flex: 1
     },
-    productImage:{
+    productImage: {
         borderWidth: 5,
         borderRadius: 7,
         width: DISPLAY_PIC_WIDTH,
@@ -118,9 +118,35 @@ var Styles = StyleSheet.create( {
         borderWidth: 1,
         borderRadius: 10,
     },
+    backContainer: {
+        //alignItems: 'flex-start',
+        //justifyContent: 'flex-start',
+        backgroundColor: 'lightblue',
+        height: 30
+    },
+    back: {
+        width: 20,
+        height: 20,
+        //resizeMode: 'contain',
+        left: 20,
+        top: 5
+    },
     logo: {
         width: windowWidth,
         resizeMode: 'contain',
+    },
+    pinImageContainer: {
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    pinImage: {
+        width: windowWidth / 1.2,
+        height: windowWidth / 1.2,
+        resizeMode: 'contain',
+        margin: 5,
+        padding: 1,
+        alignItems: 'center',
+        backgroundColor: '#eaeaea',
     },
     //---------------------------------------------------------------
     mainPicContainer: {

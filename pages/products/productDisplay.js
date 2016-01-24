@@ -58,9 +58,14 @@ var ProductDisplay = React.createClass(
         {
             return (
                 <ScrollView>
+                    <View style={styles.pinImageContainer}>
+                        <Image style={styles.pinImage}
+                               source={{uri: this.state.pin.image.original.url}}/>
+
+                    </View>
+
                     <Text>{this.state.pin.data["Project"]}</Text>
-                    <Image style={styles.pinImage}
-                           source={{uri: this.state.pin.image.original.url}}/>
+
 
                     <Text>Difficulty: {this.state.pin.data["Skill Level"]}</Text>
                     <Text>Time: {this.state.pin.data["Estimated Time"]}</Text>
