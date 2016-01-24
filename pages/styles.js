@@ -206,11 +206,13 @@ var Styles = StyleSheet.create( {
         fontSize: 15,
         fontWeight: 'bold',
         paddingBottom: 5,
-        paddingLeft: 10
+        paddingLeft: 10,
+        paddingRight: 10
     },
     productDisplayText: {
         fontWeight: 'normal',
-        paddingBottom: 5
+        paddingBottom: 5,
+        paddingRight: 10
     },
     backContainer: {
         //alignItems: 'flex-start',
