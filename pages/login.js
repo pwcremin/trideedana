@@ -72,14 +72,14 @@ var Login = React.createClass(
                         <TextInput
                             ref="username"
                             style={styles.textInput}
-                            placeholder="username"
+                            placeholder="     username"
                             onEndEditing={this.onEndEditingUser}
                         />
 
                         <TextInput
                             ref="password"
                             style={styles.textInput}
-                            placeholder="password"
+                            placeholder="     password"
                             onEndEditing={this.onEndEditingPassword}
                         />
 

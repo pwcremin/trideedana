@@ -47,7 +47,10 @@ var ProductDisplay = React.createClass(
 
         onCreateList()
         {
-            results.createListFromPin(this.state.pin);
+            results.createListFromPin(this.state.pin, function()
+            {
+                console.log("COMPLETED ADDING ITEMS")
+            });
         },
 
         onBack()

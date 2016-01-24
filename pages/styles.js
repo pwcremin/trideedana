@@ -153,6 +153,7 @@ var Styles = StyleSheet.create( {
         borderColor: 'gray',
         borderWidth: 1,
         borderRadius: 10,
+        margin: 10
     },
     backContainer: {
         //alignItems: 'flex-start',
