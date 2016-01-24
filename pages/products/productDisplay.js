@@ -83,12 +83,6 @@ var ProductDisplay = React.createClass(
 
                     </TouchableHighlight>
 
-                    <TouchableHighlight
-                        onPress={this.onBack}
-                    >
-                        <Text>back</Text>
-                    </TouchableHighlight>
-
                 </ScrollView>
                     </View>
 

@@ -117,13 +117,6 @@ var Products = React.createClass(
                         <Text>diff {this.state.categoryPreferences.difficulty}</Text>
                         <Text>time {this.state.categoryPreferences.time}</Text>
                         {this.getList()}
-
-                        <TouchableHighlight
-                            onPress={this.onBack}
-                        >
-                            <Text>back</Text>
-                        </TouchableHighlight>
-
                     </ScrollView>
                 </View>
             )
