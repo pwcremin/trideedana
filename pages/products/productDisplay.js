@@ -12,6 +12,7 @@ import React, {
 
 var pinterest = require( '../../lib/pinterest' );
 var styles = require( '../styles' );
+var results = require('../../lib/results');
 
 var CategoryPreferencesSelection = require( '../categoryPreferencesSelection' );
 
@@ -22,7 +23,7 @@ var productStore = require( '../../flux/product/store' );
 function getProductState()
 {
     return {
-        product: productStore.getProduct()
+        pin: productStore.getProduct()
     }
 }
 
@@ -40,7 +41,12 @@ var ProductDisplay = React.createClass(
 
         onChange()
         {
-            this.setState( getProductState() )
+            this.setState( getpinState() )
+        },
+
+        onCreateList()
+        {
+            results.createListFromPin(this.state.pin);
         },
 
         onBack()
@@ -52,13 +58,22 @@ var ProductDisplay = React.createClass(
         {
             return (
                 <ScrollView>
-                    <Text>{this.state.product.data["Project"]}</Text>
-                    <Image style={styles.productImage}
-                           source={{uri: this.state.product.image.original.url}}/>
+                    <Text>{this.state.pin.data["Project"]}</Text>
+                    <Image style={styles.pinImage}
+                           source={{uri: this.state.pin.image.original.url}}/>
 
-                    <Text>Difficulty: {this.state.product.data["Skill Level"]}</Text>
-                    <Text>Time: {this.state.product.data["Estimated Time"]}</Text>
-                    <Text>Materials: {this.state.product.data["Materials"]}</Text>
+                    <Text>Difficulty: {this.state.pin.data["Skill Level"]}</Text>
+                    <Text>Time: {this.state.pin.data["Estimated Time"]}</Text>
+                    <Text>Materials: {this.state.pin.data["Materials"]}</Text>
+
+                    <TouchableHighlight
+                        onPress={this.onCreateList}
+                    >
+                        <View style={styles.button}>
+                            <Text>Create List</Text>
+                        </View>
+
+                    </TouchableHighlight>
 
                     <TouchableHighlight
                         onPress={this.onBack}

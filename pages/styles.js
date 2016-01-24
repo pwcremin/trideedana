@@ -137,6 +137,10 @@ var Styles = StyleSheet.create( {
         borderWidth: 1,
         borderRadius: 10,
     },
+    logo: {
+        width: windowWidth,
+        resizeMode: 'contain',
+    },
     //---------------------------------------------------------------
     mainPicContainer: {
         borderBottomWidth: 1,

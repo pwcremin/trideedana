@@ -65,6 +65,9 @@ var Login = React.createClass(
             return (
             <Image source={require('../lib/imgs/upwards.png')} style={styles.blueGrad}>    
                 <View style={styles.loginContainer}>
+
+                    <Image style={styles.logo} source={require('../images/logo.png')} />
+
                     <View style={styles.loginButtonContainer}>
                         <TextInput
                             ref="username"
