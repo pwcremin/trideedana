@@ -47,12 +47,12 @@ var CategoryPreferencesSelection = React.createClass(
 
         getTimeColor( index )
         {
-            return this.state.time === index ? { backgroundColor: "orange" } : null;
+            return this.state.time === index ? { backgroundColor: "#ff8100", borderColor: "#ff8100"} : null;
         },
 
         getDiffColor( index )
         {
-            return this.state.difficulty === index ? { backgroundColor: "orange" } : null;
+            return this.state.difficulty === index ? { backgroundColor: "#ff8100", borderColor: "#ff8100" } : null;
         },
 
         navigate()

@@ -43,12 +43,18 @@ var Styles = StyleSheet.create( {
     },
     button: {
         width: 100,
-        height: 50,
-        backgroundColor: 'lightblue',
-        borderWidth: 1,
-        borderRadius: 7,
+        height: 55,
+        backgroundColor: '#fdc058',
+        borderColor: '#fdc058',
+        borderWidth: 6,
+        borderRadius: 30,
         justifyContent: 'center',
         alignItems: 'center',
+        fontFamily: 'Helvetica Neue',
+        shadowColor: '#e29003',
+        shadowOpacity: 1,
+        shadowOffset: {width: 0, height: 3},
+        margin: 10
     },
     categoryPrefChoicesContainer: {
         flexDirection: 'row',
