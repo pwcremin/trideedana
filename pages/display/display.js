@@ -72,15 +72,12 @@ var Main = React.createClass(
                 }
 
                 components.push(
-                    <View key={i}>
+                    <View key={i} style={styles.center}>
                         <TouchableHighlight
-                            onPress={this.onCategorySelection.bind(null, board)}
+                            onPress={this.onCategorySelection.bind(null, board)} underlayColor='transparent'
                         >
                             <View key={i} style={styles.displayContainer}>
-                                {image}
-                    <View style={styles.categoryText}>
-                        <Text style={styles.questionText}>{name}</Text>
-                    </View>                                
+                                {image}               
                                 <View style={styles.divider}/>
                             </View>
                         </TouchableHighlight>

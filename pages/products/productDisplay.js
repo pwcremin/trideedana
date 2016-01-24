@@ -78,7 +78,7 @@ var ProductDisplay = React.createClass(
                     <Text>Materials: {this.state.pin.data["Materials"]}</Text>
 
                     <TouchableHighlight
-                        onPress={this.onCreateList}
+                        onPress={this.onCreateList} underlayColor='transparent'
                     >
                         <View style={styles.button}>
                             <Text>Create List</Text>
