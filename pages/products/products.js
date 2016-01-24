@@ -98,7 +98,7 @@ var Products = React.createClass(
                         </View>
 
                             <TouchableHighlight
-                                onPress={this.onProductSelection.bind(null, pin)}
+                                onPress={this.onProductSelection.bind(null, pin)} underlayColor='transparent'
                             >
                                 <View key={i} style={styles.displayContainer}>
                                     {image}
