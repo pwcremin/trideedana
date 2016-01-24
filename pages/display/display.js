@@ -68,7 +68,12 @@ var Main = React.createClass(
 
                     image = <Image
                         style={styles.displayPic}
-                        source={{uri: url}}/>
+                        source={{uri: url}}>
+                        <View style={styles.displayTextContainer}>
+                            <Text style={styles.displayText}>{name}</Text>
+                        </View>
+
+                        </Image>
                 }
 
                 components.push(

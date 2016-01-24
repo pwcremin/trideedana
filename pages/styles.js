@@ -18,7 +18,7 @@ const DELETE_IMG_TOP = 58;
 
 var Styles = StyleSheet.create( {
     container: {
-        flex:1
+        flex: 1
     },
     center: {
         justifyContent: 'center',
@@ -99,7 +99,7 @@ var Styles = StyleSheet.create( {
         paddingLeft: 15,
         paddingRight: 15,
         paddingBottom: 25
-    },    
+    },
     choicesText: {
         position: 'relative',
         left: windowWidth * 0.01,
@@ -155,6 +155,18 @@ var Styles = StyleSheet.create( {
         borderWidth: 1,
         borderRadius: 10,
         margin: 10
+    },
+    displayTextContainer: {
+        //position: 'relative',
+        //left: 50,
+        top: 30,
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'transparent'
+    },
+    displayText: {
+        fontSize: 35,
     },
     backContainer: {
         //alignItems: 'flex-start',
