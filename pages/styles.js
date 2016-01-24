@@ -62,6 +62,16 @@ var Styles = StyleSheet.create( {
         justifyContent: 'center',
         flex: 1
     },
+    productImage:{
+        borderWidth: 5,
+        borderRadius: 7,
+        width: DISPLAY_PIC_WIDTH,
+        height: DISPLAY_PIC_WIDTH,
+        margin: 5,
+        padding: 1,
+        alignItems: 'center',
+        backgroundColor: '#eaeaea',
+    },
     //---------------------------------------------------------------
     mainPicContainer: {
         borderBottomWidth: 1,

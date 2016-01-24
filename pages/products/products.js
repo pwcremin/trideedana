@@ -13,7 +13,7 @@ import React, {
 var pinterest = require( '../../lib/pinterest' );
 var styles = require( '../styles' );
 
-var CategoryPreferencesSelection = require( '../categoryPreferencesSelection' );
+var ProductDisplay = require( './productDisplay' );
 
 import {dispatch} from '../../flux/product/dispatcher';
 var productConstants = require( '../../flux/product/constants' );
@@ -50,9 +50,16 @@ var Products = React.createClass(
         },
 
 
-        onProductSelection()
+        onProductSelection(pin)
         {
+            dispatch( {
+                type: productConstants.SETPRODUCT,
+                pin: pin,
+            } );
 
+            this.props.navigator.push({
+                component: ProductDisplay
+            })
         },
 
         getList()
@@ -108,6 +115,13 @@ var Products = React.createClass(
                     <Text>diff {this.state.categoryPreferences.difficulty}</Text>
                     <Text>time {this.state.categoryPreferences.time}</Text>
                     {this.getList()}
+
+                    <TouchableHighlight
+                        onPress={this.onBack}
+                    >
+                        <Text>back</Text>
+                    </TouchableHighlight>
+
                 </ScrollView>
 
             )
