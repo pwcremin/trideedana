@@ -163,10 +163,22 @@ var Styles = StyleSheet.create( {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'transparent'
+        backgroundColor: 'transparent',
+        shadowColor: '#1b1b1b',
+        shadowOpacity: 1,
+        shadowOffset: { width: 1, height: 2 },
+        shadowRadius: 2,
     },
     displayText: {
         fontSize: 35,
+        color: '#eeeff0',
+        shadowColor: '#446378',
+        shadowOpacity: 1,
+        shadowOffset: { width: 1, height: 2 },
+        shadowRadius: 2,
+        fontFamily: 'Helvetica Neue',
+        fontWeight: 'bold',
+
     },
     backContainer: {
         //alignItems: 'flex-start',
