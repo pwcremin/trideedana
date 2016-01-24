@@ -79,7 +79,7 @@ var CategoryPreferencesSelection = React.createClass(
         getTimeButton(text, index)
         {
             return <TouchableHighlight
-                onPress={this.onTimeSelection.bind(null, index)} underlayColor= 'white'
+                onPress={this.onTimeSelection.bind(null, index)} underlayColor= '#c2baba'
             >
                 <View style={[styles.button, this.getTimeColor(index)]}>
                     <Text>{text}</Text>
@@ -90,7 +90,7 @@ var CategoryPreferencesSelection = React.createClass(
         getDiffButton(text, index)
         {
             return <TouchableHighlight
-                onPress={this.onDifficultySelection.bind(null, index)} underlayColor= 'white'
+                onPress={this.onDifficultySelection.bind(null, index)} underlayColor= '#9f9898'
             >
                 <View style={[styles.button, this.getDiffColor(index)]}>
                     <Text>{text}</Text>
@@ -102,16 +102,25 @@ var CategoryPreferencesSelection = React.createClass(
         {
             return (
                 <View style={styles.categoryPrefButtonContainer}>
-                    <View style={[styles.categoryPrefChoicesContainer, {backgroundColor: 'green'}]}>
+                    <View style={[styles.categoryPrefButtonContainer, {backgroundColor: '#c2baba'}]}>
+                    <View style={styles.choicesText}>
+                        <Text style={styles.questionText}>How much time do you want to spend?</Text>
+                    </View>
+                    <View style={styles.categoryPrefChoicesContainer}>
                         {this.getTimeButton("a few hours", 0)}
                         {this.getTimeButton("1 day", 1)}
                         {this.getTimeButton("1 weekend", 2)}
                     </View>
-
-                    <View style={styles.categoryPrefChoicesContainer}>
+                    </View>
+                    <View style={[styles.categoryPrefButtonContainer, {backgroundColor: '#9f9898'}]}>
+                    <View style={styles.choicesText}>
+                        <Text style={styles.questionText}>What skill level are you?</Text>
+                    </View>                    
+                    <View style={styles.categoryPrefChoicesContainer}>      
                         {this.getDiffButton("beginner", 0)}
                         {this.getDiffButton("intermediate", 1)}
                         {this.getDiffButton("advanced", 2)}
+                    </View>
                     </View>
                 </View>
 

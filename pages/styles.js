@@ -59,7 +59,29 @@ var Styles = StyleSheet.create( {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        flex: 1
+        flex: 1,
+        width: windowWidth
+    },
+    questionText: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        textAlign: 'center'
+    },
+    choicesText: {
+        position: 'relative',
+        left: windowWidth * 0.01,
+        marginTop: 50,
+        paddingLeft: 15,
+        paddingRight: 15
+
+    },
+    textContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1,
+        width: windowWidth,
+        height: 30
     },
     categoryPrefButtonContainer: {
         flexDirection: 'column',
@@ -177,10 +199,6 @@ var Styles = StyleSheet.create( {
         alignSelf: 'center',
         flex: 1,
         marginLeft: 20
-    },
-    title: {
-        fontSize: 20,
-        fontWeight: 'bold',
     }
 } );
 
