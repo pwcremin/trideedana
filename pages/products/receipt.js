@@ -61,6 +61,7 @@ var Receipt = React.createClass( {
     render()
     {
         return (
+        <Image source={require('../../lib/imgs/upwards.png')} style={styles.blueGrad}>        
             <View>
                 <TouchableHighlight
                     onPress={this.onPress}
@@ -72,6 +73,7 @@ var Receipt = React.createClass( {
                 </TouchableHighlight>
                 {this.getReceipt()}
             </View>
+        </Image>
         )
 
     }
