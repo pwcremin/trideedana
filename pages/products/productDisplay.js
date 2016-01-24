@@ -56,6 +56,10 @@ var ProductDisplay = React.createClass(
                     <Image style={styles.productImage}
                            source={{uri: this.state.product.image.original.url}}/>
 
+                    <Text>Difficulty: {this.state.product.data["Skill Level"]}</Text>
+                    <Text>Time: {this.state.product.data["Estimated Time"]}</Text>
+                    <Text>Materials: {this.state.product.data["Materials"]}</Text>
+
                     <TouchableHighlight
                         onPress={this.onBack}
                     >
