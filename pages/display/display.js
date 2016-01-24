@@ -99,11 +99,6 @@ var Main = React.createClass(
                 <ScrollView>
                     <Text style={styles.introText}>What would you like to work on today?</Text>
                     {this.getList()}
-                    <TouchableHighlight
-                        onPress={this.onBack}
-                    >
-                        <Text>back</Text>
-                    </TouchableHighlight>
                 </ScrollView>
             </Image>
 

@@ -15,6 +15,7 @@ var styles = require( '../styles' );
 var results = require('../../lib/results');
 
 var CategoryPreferencesSelection = require( '../categoryPreferencesSelection' );
+var Back = require('../../components/back');
 
 import {dispatch} from '../../flux/product/dispatcher';
 var productConstants = require( '../../flux/product/constants' );
@@ -57,10 +58,17 @@ var ProductDisplay = React.createClass(
         render()
         {
             return (
+                <View style={styles.container}>
+                    <Back {...this.props}/>
                 <ScrollView>
+                    <View style={styles.pinImageContainer}>
+                        <Image style={styles.pinImage}
+                               source={{uri: this.state.pin.image.original.url}}/>
+
+                    </View>
+
                     <Text>{this.state.pin.data["Project"]}</Text>
-                    <Image style={styles.pinImage}
-                           source={{uri: this.state.pin.image.original.url}}/>
+
 
                     <Text>Difficulty: {this.state.pin.data["Skill Level"]}</Text>
                     <Text>Time: {this.state.pin.data["Estimated Time"]}</Text>
@@ -75,13 +83,8 @@ var ProductDisplay = React.createClass(
 
                     </TouchableHighlight>
 
-                    <TouchableHighlight
-                        onPress={this.onBack}
-                    >
-                        <Text>back</Text>
-                    </TouchableHighlight>
-
                 </ScrollView>
+                    </View>
 
             )
         }
