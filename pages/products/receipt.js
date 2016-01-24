@@ -9,11 +9,11 @@ import React, {
     ScrollView
 } from 'react-native';
 
-var styles = require( '../pages/styles' );
+var styles = require( '../../pages/styles' );
 
-var Display = require( '../pages/styles' );
+var Display = require( '../../pages/styles' );
 
-var List = React.createClass( {
+var Receipt = React.createClass( {
 
     onPress()
     {
@@ -30,7 +30,7 @@ var List = React.createClass( {
                     onPress={this.onPress}
                 >
                     <View style={styles.backContainer}>
-                        <Image style={styles.back} source={require('../images/back_icon.png')}/>
+                        <Text>here</Text>
                     </View>
                 </TouchableHighlight>
             </View>
@@ -39,4 +39,4 @@ var List = React.createClass( {
     }
 } );
 
-module.exports = List;
+module.exports = Receipt;
