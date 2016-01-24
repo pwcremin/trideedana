@@ -10,11 +10,12 @@ import React, {
     Text,
     View,
     Navigator,
-    TouchableHighlight,
-  //  StatusBarIOS
+    TouchableHighlight
+    //StatusBarIOS
 } from 'react-native';
 
 var Landing = require( './pages/landing' );
+var Login = require( './pages/login' );
 
 
 //StatusBarIOS.setHidden(true);
@@ -30,7 +31,8 @@ var Trideedana = React.createClass( {
     render() {
         return (
             <Navigator
-                initialRoute={{component: Landing}}
+                //initialRoute={{component: Landing}}
+                initialRoute={{component: Login}}
                 renderScene={this.renderScene}
             />
         )

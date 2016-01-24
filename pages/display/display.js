@@ -97,6 +97,7 @@ var Main = React.createClass(
             return (
                 <Image source={require('../../lib/imgs/upwards.png')} style={styles.blueGrad}>
                 <ScrollView>
+                    <Text style={styles.introText}>What would you like to work on today?</Text>
                     {this.getList()}
                 </ScrollView>
             </Image>
