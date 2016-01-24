@@ -185,7 +185,18 @@ var Styles = StyleSheet.create( {
         color: '#5b5757',
         fontWeight: 'bold',
         paddingBottom: 10,
-        paddingTop: 10
+        paddingTop: 10,
+        paddingLeft: 10
+    },
+    productDisplayLabel: {
+        fontSize: 15,
+        fontWeight: 'bold',
+        paddingBottom: 5,
+        paddingLeft: 10
+    },
+    productDisplayText: {
+        fontWeight: 'normal',
+        paddingBottom: 5
     },
     backContainer: {
         //alignItems: 'flex-start',

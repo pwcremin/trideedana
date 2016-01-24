@@ -88,9 +88,9 @@ var ProductDisplay = React.createClass(
                         <Text style={styles.productDisplayTitle}>{this.state.pin.data[ "Project" ]}</Text>
 
 
-                        <Text>Difficulty: {this.state.pin.data[ "Skill Level" ]}</Text>
-                        <Text>Time: {this.state.pin.data[ "Estimated Time" ]}</Text>
-                        <Text>Materials: {this.state.pin.data[ "Materials" ]}</Text>
+                        <Text style={styles.productDisplayLabel}>Difficulty: <Text style={styles.productDisplayText}>{this.state.pin.data[ "Skill Level" ]}</Text></Text>
+                        <Text style={styles.productDisplayLabel}>Time: <Text style={styles.productDisplayText}>{this.state.pin.data[ "Estimated Time" ]}</Text></Text>
+                        <Text style={styles.productDisplayLabel}>Materials: <Text style={styles.productDisplayText}>{this.state.pin.data[ "Materials" ]}</Text></Text>
 
                         <TouchableHighlight
                             onPress={this.onCreateList} underlayColor='transparent'
