@@ -82,6 +82,16 @@ var Styles = StyleSheet.create( {
         textAlign: 'center',
         color: '#5b5757'
     },
+    introText: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        color: '#5b5757',
+        marginTop: 40,
+        paddingLeft: 15,
+        paddingRight: 15,
+        paddingBottom: 25
+    },    
     choicesText: {
         position: 'relative',
         left: windowWidth * 0.01,
