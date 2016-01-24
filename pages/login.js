@@ -8,60 +8,91 @@ import React, {
     StyleSheet,
     Text,
     View,
-    TouchableHighlight
+    TouchableHighlight,
+    TextInput
 } from 'react-native';
 
-var Selection = require('./selection/selection');
-var Display = require('./display/display');
-var Purchase = require('./purchase/purchase');
+var styles = require( './styles' );
+
+var Landing = require( './landing' );
+var Display = require( './display/display' );
+
+var lowes = require( '../lib/lowes' );
 
 var Login = React.createClass(
     {
-        onSelection()
+
+        getInitialState()
         {
-            this.props.navigator.push({
-                component: Selection
-            } );
+            return {
+                username: null,
+                password: null
+            }
+
         },
 
-        onDisplay()
+        componentWillMount()
         {
-            this.props.navigator.push({
+            //this.props.navigator.push({
+            //    component: Display
+            //} );
+        },
+
+        onEndEditingUser( event )
+        {
+            var value = event.nativeEvent.text;
+
+            this.setState( { username: value } )
+        },
+
+        onEndEditingPassword ( event )
+        {
+            var value = event.nativeEvent.text;
+
+            this.setState( { password: value } )
+        },
+
+        onPress()
+        {
+            this.props.navigator.replace({
                 component: Display
-            } );
-        },
-
-        onPurchase()
-        {
-            this.props.navigator.push({
-                component: Purchase
             } );
         },
 
         render()
         {
-            return(
-                <View>
-                    <Text>SUCCESS</Text>
-                    <TouchableHighlight
-                        onPress={this.onSelection}
-                    >
-                        <Text>Selection</Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        onPress={this.onDisplay}
-                    >
-                        <Text>Display</Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        onPress={this.onPurchase}
-                    >
-                        <Text>Purchse</Text>
-                    </TouchableHighlight>
+            return (
+                <View style={styles.loginContainer}>
+                    <View style={styles.loginButtonContainer}>
+                        <TextInput
+                            ref="username"
+                            style={styles.textInput}
+                            placeholder="username"
+                            onEndEditing={this.onEndEditingUser}
+                        />
+
+                        <TextInput
+                            ref="password"
+                            style={styles.textInput}
+                            placeholder="password"
+                            onEndEditing={this.onEndEditingPassword}
+                        />
+
+                        <TouchableHighlight
+                            onPress={this.onPress}
+                        >
+                            <View style={styles.button}>
+                                <Text>Login</Text>
+                            </View>
+                        </TouchableHighlight>
+
+                    </View>
+
+
                 </View>
 
             )
         }
-    })
+    } )
 
 module.exports = Login;

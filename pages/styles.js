@@ -86,6 +86,25 @@ var Styles = StyleSheet.create( {
         alignItems: 'center',
         backgroundColor: '#eaeaea',
     },
+    loginContainer: {
+        //flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1
+    },
+    loginButtonContainer: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1
+    },
+    textInput: {
+        height: 50,
+        width: 300,
+        borderColor: 'gray',
+        borderWidth: 1,
+        borderRadius: 10,
+    },
     //---------------------------------------------------------------
     mainPicContainer: {
         borderBottomWidth: 1,
