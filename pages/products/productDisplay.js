@@ -15,6 +15,7 @@ var styles = require( '../styles' );
 var results = require('../../lib/results');
 
 var CategoryPreferencesSelection = require( '../categoryPreferencesSelection' );
+var Back = require('../../components/back');
 
 import {dispatch} from '../../flux/product/dispatcher';
 var productConstants = require( '../../flux/product/constants' );
@@ -57,6 +58,8 @@ var ProductDisplay = React.createClass(
         render()
         {
             return (
+                <View style={styles.container}>
+                    <Back {...this.props}/>
                 <ScrollView>
                     <View style={styles.pinImageContainer}>
                         <Image style={styles.pinImage}
@@ -87,6 +90,7 @@ var ProductDisplay = React.createClass(
                     </TouchableHighlight>
 
                 </ScrollView>
+                    </View>
 
             )
         }

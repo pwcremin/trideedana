@@ -14,6 +14,7 @@ var pinterest = require( '../../lib/pinterest' );
 var styles = require( '../styles' );
 
 var ProductDisplay = require( './productDisplay' );
+var Back = require( '../../components/back' );
 
 import {dispatch} from '../../flux/product/dispatcher';
 var productConstants = require( '../../flux/product/constants' );
@@ -50,16 +51,16 @@ var Products = React.createClass(
         },
 
 
-        onProductSelection(pin)
+        onProductSelection( pin )
         {
             dispatch( {
                 type: productConstants.SETPRODUCT,
                 pin: pin,
             } );
 
-            this.props.navigator.push({
+            this.props.navigator.push( {
                 component: ProductDisplay
-            })
+            } )
         },
 
         getList()
@@ -71,12 +72,11 @@ var Products = React.createClass(
             for ( var i = 0; i < pins.length; i++ ) {
                 var pin = pins[ i ];
 
-                console.log("PIN skill: " + pin.data["Skill Level"]);
-                console.log("PIN time: " + pin.data["Estimated Time"]);
+                console.log( "PIN skill: " + pin.data[ "Skill Level" ] );
+                console.log( "PIN time: " + pin.data[ "Estimated Time" ] );
 
-                if(pin.data["Skill Level"] !== this.state.categoryPreferences.difficulty
-                || pin.data["Estimated Time"] !== this.state.categoryPreferences.time)
-                {
+                if ( pin.data[ "Skill Level" ] !== this.state.categoryPreferences.difficulty
+                    || pin.data[ "Estimated Time" ] !== this.state.categoryPreferences.time ) {
                     continue;
                 }
 
@@ -110,20 +110,22 @@ var Products = React.createClass(
         render()
         {
             return (
-                <ScrollView>
-                    <Text>category {this.state.category.name}</Text>
-                    <Text>diff {this.state.categoryPreferences.difficulty}</Text>
-                    <Text>time {this.state.categoryPreferences.time}</Text>
-                    {this.getList()}
+                <View style={styles.container}>
+                    <Back {...this.props}/>
+                    <ScrollView>
+                        <Text>category {this.state.category.name}</Text>
+                        <Text>diff {this.state.categoryPreferences.difficulty}</Text>
+                        <Text>time {this.state.categoryPreferences.time}</Text>
+                        {this.getList()}
 
-                    <TouchableHighlight
-                        onPress={this.onBack}
-                    >
-                        <Text>back</Text>
-                    </TouchableHighlight>
+                        <TouchableHighlight
+                            onPress={this.onBack}
+                        >
+                            <Text>back</Text>
+                        </TouchableHighlight>
 
-                </ScrollView>
-
+                    </ScrollView>
+                </View>
             )
         }
     } );

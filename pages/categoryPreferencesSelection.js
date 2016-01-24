@@ -105,29 +105,31 @@ var CategoryPreferencesSelection = React.createClass(
         render()
         {
             return (
+                <View style={styles.container}>
+                    <Back {...this.props}/>
+                    <View style={styles.categoryPrefButtonContainer}>
+                        <View style={[styles.categoryPrefButtonContainer, {backgroundColor: '#ced5db'}]}>
+                            <View style={styles.choicesText}>
+                                <Text style={styles.questionText}>How much time do you want to spend?</Text>
+                            </View>
+                            <View style={styles.categoryPrefChoicesContainer}>
+                                {this.getTimeButton( <Text style={styles.answerText}>HOURS</Text>, 0 )}
+                                {this.getTimeButton( <Text style={styles.answerText}>DAY</Text>, 1 )}
+                                {this.getTimeButton( <Text style={styles.answerText}>WEEKEND</Text>, 2 )}
 
-                <View style={styles.categoryPrefButtonContainer}>
-                    <View style={[styles.categoryPrefButtonContainer, {backgroundColor: '#ced5db'}]}>
-                        <View style={styles.choicesText}>
-                            <Text style={styles.questionText}>How much time do you want to spend?</Text>
+                            </View>
                         </View>
-                        <View style={styles.categoryPrefChoicesContainer}>
-                            {this.getTimeButton( <Text style={styles.answerText}>HOURS</Text>, 0 )}
-                            {this.getTimeButton( <Text style={styles.answerText}>DAY</Text>, 1 )}
-                            {this.getTimeButton( <Text style={styles.answerText}>WEEKEND</Text>, 2 )}
+                        <View style={[styles.categoryPrefButtonContainer, {backgroundColor: '#b0bcc3'}]}>
+                            <View style={styles.choicesText}>
+                                <Text style={styles.questionText}>What skill level are you?</Text>
+                            </View>
+                            <View style={styles.categoryPrefChoicesContainer}>
+                                {this.getDiffButton( <Text style={styles.answerText}>BEGINNER</Text>, 0 )}
+                                {this.getDiffButton( <Text style={styles.answerText}>MEDIAL</Text>, 1 )}
+                                {this.getDiffButton( <Text style={styles.answerText}>ADVANCED</Text>, 2 )}
+                            </View>
 
                         </View>
-                    </View>
-                    <View style={[styles.categoryPrefButtonContainer, {backgroundColor: '#b0bcc3'}]}>
-                        <View style={styles.choicesText}>
-                            <Text style={styles.questionText}>What skill level are you?</Text>
-                        </View>
-                        <View style={styles.categoryPrefChoicesContainer}>
-                            {this.getDiffButton( <Text style={styles.answerText}>BEGINNER</Text>, 0 )}
-                            {this.getDiffButton( <Text style={styles.answerText}>MEDIAL</Text>, 1 )}
-                            {this.getDiffButton( <Text style={styles.answerText}>ADVANCED</Text>, 2 )}
-                        </View>
-
                     </View>
                 </View>
 

@@ -17,6 +17,9 @@ const DELETE_IMG_LEFT = 62;
 const DELETE_IMG_TOP = 58;
 
 var Styles = StyleSheet.create( {
+    container: {
+        flex:1
+    },
     displayPicContainer: {
         // borderWidth: 1,
         justifyContent: 'center',
