@@ -117,12 +117,14 @@ var Products = React.createClass(
             var description = this.state.category.pins ? this.state.category.pins[ 0 ].data[ "Project" ] : "";
 
             return (
+            <Image source={require('../../lib/imgs/upwards.png')} style={styles.blueGrad}>    
                 <View style={styles.container}>
                     <Back {...this.props}/>
                     <ScrollView>
                         {this.getList()}
                     </ScrollView>
                 </View>
+            </Image>
             )
         }
     } );

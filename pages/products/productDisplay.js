@@ -76,6 +76,7 @@ var ProductDisplay = React.createClass(
         render()
         {
             return (
+            <Image source={require('../../lib/imgs/upwards.png')} style={styles.blueGrad}>   
                 <View style={styles.container} onLayout={this.onLayout}>
                     <Back {...this.props}/>
                     <ScrollView>
@@ -111,9 +112,9 @@ var ProductDisplay = React.createClass(
                         alignItems: 'center',
                         justifyContent: 'center'
                         }}
-                        size="large"
-                    />
+                        size="large"/>
                 </View>
+                </Image>
 
             )
         }
