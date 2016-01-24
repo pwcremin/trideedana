@@ -62,6 +62,19 @@ var Styles = StyleSheet.create( {
         flex: 1,
         width: windowWidth
     },
+    questionText: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        textAlign: 'center'
+    },
+    choicesText: {
+        position: 'relative',
+        left: windowWidth * 0.01,
+        marginTop: 50,
+        paddingLeft: 15,
+        paddingRight: 15
+
+    },
     textContainer: {
         flexDirection: 'row',
         alignItems: 'center',

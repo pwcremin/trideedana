@@ -102,17 +102,25 @@ var CategoryPreferencesSelection = React.createClass(
         {
             return (
                 <View style={styles.categoryPrefButtonContainer}>
-                    <View style={[styles.categoryPrefChoicesContainer, {backgroundColor: '#c2baba'}]}>
-
+                    <View style={[styles.categoryPrefButtonContainer, {backgroundColor: '#c2baba'}]}>
+                    <View style={styles.choicesText}>
+                        <Text style={styles.questionText}>How much time do you want to spend?</Text>
+                    </View>
+                    <View style={styles.categoryPrefChoicesContainer}>
                         {this.getTimeButton("a few hours", 0)}
                         {this.getTimeButton("1 day", 1)}
                         {this.getTimeButton("1 weekend", 2)}
                     </View>
-
-                    <View style={[styles.categoryPrefChoicesContainer, {backgroundColor: '#9f9898'}]}>
+                    </View>
+                    <View style={[styles.categoryPrefButtonContainer, {backgroundColor: '#9f9898'}]}>
+                    <View style={styles.choicesText}>
+                        <Text style={styles.questionText}>What skill level are you?</Text>
+                    </View>                    
+                    <View style={styles.categoryPrefChoicesContainer}>      
                         {this.getDiffButton("beginner", 0)}
                         {this.getDiffButton("intermediate", 1)}
                         {this.getDiffButton("advanced", 2)}
+                    </View>
                     </View>
                 </View>
 
