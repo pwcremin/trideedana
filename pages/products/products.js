@@ -89,17 +89,22 @@ var Products = React.createClass(
                     source={{uri: url}}
                 />
 
+                var description = pin.data[ "Project" ]
+
                 components.push(
-                    <View key={i}>
-                        <TouchableHighlight
-                            onPress={this.onProductSelection.bind(null, pin)}
-                        >
-                            <View key={i} style={styles.displayContainer}>
-                                {image}
-                                {name}
-                                <View style={styles.divider}/>
-                            </View>
-                        </TouchableHighlight>
+                    <View key={i} style={styles.center}>
+                        <View style={styles.center}>
+                            <Text>{description}</Text>
+                        </View>
+
+                            <TouchableHighlight
+                                onPress={this.onProductSelection.bind(null, pin)}
+                            >
+                                <View key={i} style={styles.displayContainer}>
+                                    {image}
+                                    <View style={styles.divider}/>
+                                </View>
+                            </TouchableHighlight>
                     </View>
                 )
             }
@@ -109,13 +114,12 @@ var Products = React.createClass(
 
         render()
         {
+            var description = this.state.category.pins ? this.state.category.pins[ 0 ].data[ "Project" ] : "";
+
             return (
                 <View style={styles.container}>
                     <Back {...this.props}/>
                     <ScrollView>
-                        <Text>category {this.state.category.name}</Text>
-                        <Text>diff {this.state.categoryPreferences.difficulty}</Text>
-                        <Text>time {this.state.categoryPreferences.time}</Text>
                         {this.getList()}
                     </ScrollView>
                 </View>

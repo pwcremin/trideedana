@@ -20,6 +20,10 @@ var Styles = StyleSheet.create( {
     container: {
         flex:1
     },
+    center: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     displayPicContainer: {
         // borderWidth: 1,
         justifyContent: 'center',
