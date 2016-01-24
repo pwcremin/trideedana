@@ -18,7 +18,7 @@ var CategoryPreferencesSelection = require('../categoryPreferencesSelection');
 import {dispatch} from '../../flux/product/dispatcher';
 var productConstants = require( '../../flux/product/constants' );
 
-var Main = React.createClass(
+var Display = React.createClass(
     {
         getInitialState()
         {
@@ -108,4 +108,4 @@ var Main = React.createClass(
         }
     } );
 
-module.exports = Main;
+module.exports = Display;

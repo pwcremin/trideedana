@@ -46,19 +46,21 @@ var ProductDisplay = React.createClass(
 
         onChange()
         {
-            this.setState( getpinState() )
+            this.setState( getProductState() )
         },
 
         onCreateList()
         {
             this.setState( { animating: true } );
 
-            results.createListFromPin( this.state.pin, function ()
+            results.createListFromPin( this.state.pin, function (listId, productIds)
             {
                 this.setState( { animating: false } );
 
                 this.props.navigator.replace( {
-                    component: Receipt
+                    component: Receipt,
+                    productIds: productIds,
+                    listId: listId
                 } )
             }.bind( this ) );
         },
