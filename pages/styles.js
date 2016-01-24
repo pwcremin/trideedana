@@ -50,7 +50,6 @@ var Styles = StyleSheet.create( {
         borderRadius: 30,
         justifyContent: 'center',
         alignItems: 'center',
-        fontFamily: 'Helvetica Neue',
         shadowColor: '#e29003',
         shadowOpacity: 1,
         shadowOffset: {width: 0, height: 3},
